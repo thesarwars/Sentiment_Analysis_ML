@@ -8,8 +8,8 @@ from django.http import HttpResponse,JsonResponse, HttpResponseNotFound
         
 def predict_data(request):
     if request.method == 'POST':
-        vectoriser, model = load_model('D:/Arena Files/Arena Project/sentiment_py/models/vectoriser.pickle', 'D:/Arena Files/Arena Project/sentiment_py/models/Sentiment-LR.pickle')
-        # vectoriser, model = load_model('/Users/sarwars/Desktop/Projects/sentiment_ana_django/models/vectoriser.pickle', '/Users/sarwars/Desktop/Projects/sentiment_ana_django/models/Sentiment-LR.pickle')
+        # vectoriser, model = load_model('D:/Arena Files/Arena Project/sentiment_py/models/vectoriser.pickle', 'D:/Arena Files/Arena Project/sentiment_py/models/Sentiment-LR.pickle')
+        vectoriser, model = load_model('models/vectoriser.pickle', 'models/Sentiment-LR.pickle')
         #  = load_model('/Users/sarwars/Desktop/Projects/sentiment_ana_django/models/Sentiment-LR.pickle')
         tweets = request.POST.get('comment')
         cols = ["tweet"]

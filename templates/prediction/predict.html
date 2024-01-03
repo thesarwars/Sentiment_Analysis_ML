@@ -10,6 +10,7 @@
       crossorigin="anonymous"
     />
     <link rel='stylesheet' type='text/css' href={% static "css/main.css" %} class='css'>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" type="text/css">
   </head>
 
   <body>
@@ -60,9 +61,9 @@
               <p class="form-group w-75 mt-2 ms-2 fw-bold">Predicted Result</p>
               <div class="d-flex justify-content-between px-3">
                 <p class="lh-1 fw-semibold">Class</p>
-                <p class="lh-1 fw-semibold">Cofidence</p>
+                <p class="lh-1 fw-semibold">Confidence</p>
               </div>
-              <hr class="" />
+              <hr>
               <div class="d-flex justify-content-between px-3">
                 <p class='text-primary'><span id='result-sentiment'></p>
                 <p class='text-primary'><span id='result-text'></p>
@@ -74,28 +75,58 @@
     </div>
 
     <h3 class="mt-5 d-flex justify-content-center">Sentiment Analysis benefits</h3>
+    <div class='d-flex gap-3 p-4 justify-content-center'>
+      <p class='text-secondary'><i class="fa-solid fa-square-check me-1 text-success"></i><strong>Business Insights:</strong> Sentiment analysis extracts valuable insights from customer feedback, helping businesses understand market trends, identify strengths, and address weaknesses.</p>
+      <p class='text-secondary'><i class="fa-solid fa-square-check me-1 text-success"></i><strong>Reputation Management:</strong> Monitoring sentiments in real-time allows proactive management of brand reputation, enabling quick responses to negative feedback and crises.</p>
+      <p class='text-secondary'><i class="fa-solid fa-square-check me-1 text-success"></i><strong>Customer Service Improvement:</strong> By analyzing customer interactions, sentiment analysis helps prioritize and address issues promptly, enhancing overall customer satisfaction and experience.</p>
+    </div>
 
-    <div class="blockcode">
-        <footer class="shadow footer fixed-bottom">
+    <h3 class="mt-5 d-flex justify-content-center">API for Web Site</h3>
+    <p class="d-flex justify-content-center">Sentiment analysis APIs provide a convenient and efficient way to integrate</p>
+    <ul class='ms-3'>
+      {% comment %} <i class="fa-solid fa-paintbrush"></i> {% endcomment %}
+      <i class="fa-solid fa-paintbrush me-1 text-nav-color"></i>
+      <strong class='text-secondary'>High Accuracy and Reliability</strong> 
+      <p class='text-secondary ms-5'>Our sentiment analysis model API is built on advanced machine learning algorithms, ensuring high accuracy in analyzing and categorizing sentiments.</p>
+
+      <i class="fa-solid fa-paintbrush me-1 text-nav-color"></i>
+      <strong class='text-secondary'>Seamless Integration for Rapid Deployment</strong> 
+      <p class='text-secondary ms-5'>Easily integrate our sentiment analysis API into your applications or services with minimal effort.</p>
+
+      <i class="fa-solid fa-paintbrush me-1 text-nav-color"></i>
+      <strong class='text-secondary'>Customization for Unique Requirements</strong> 
+      <p class='text-secondary ms-5'>Tailor the sentiment analysis model to your specific industry or domain. For Customization, contact us.</p>
+
+      <i class="fa-solid fa-paintbrush me-1 text-nav-color"></i>
+      <strong class='text-secondary'>Flexible Subscription Plans for Scalability</strong> 
+      <p class='text-secondary ms-5'>Choose from flexible subscription plans that suit your usage requirements. Our pricing model allows you to scale the usage of the sentiment analysis API according to your business needs, ensuring cost-effectiveness and providing room for growth as your data volume and analysis demands increase.</p>
+    </ul>
+
+    <h3 class="mt-5 d-flex justify-content-center" name='#price'>Pricing</h3>
+    <p class="d-flex justify-content-center ms-3">You can analyze in our website free of cost. If you want to integrate with your website or software, we will provide the API that will cost you some.</p>
+    <p class="d-flex justify-content-center ms-3 fw-bold">Contact me at &nbsp;<a href='https://resume-plum-ten.vercel.app/' target='_blank'>sarwar.me</a>&nbsp; for the pricing.</p>
+
+    <div class="blockcode mt-6">
+        <footer class="shadow footer">
           <div
             class="d-flex justify-content-between align-items-center mx-auto py-4 flex-wrap"
             style="width: 80%"
           >
-            <a href="/#" class="d-flex align-items-center p-0 text-dark">
-              <img alt="logo" src="../img/logo.png" width="30px" />
-              <span class="ms-4 h5 font-weight-bold">Devwares</span>
-            </a>
-            <small>&copy; Sarwar's, 2024. All rights reserved.</small>
+            <p class="d-flex align-items-center p-0 text-dark mt-4">
+              {% comment %} <img alt="logo" src="../img/logo.png" width="30px" /> {% endcomment %}
+              <span class="ms-4 h5 font-weight-bold">TahaMent ML</span>
+            </p>
+            <small>&copy; <a href='https://resume-plum-ten.vercel.app/' target='_blank'>Sarwar's</a>, 2024. All rights reserved.</small>
             <div>
-              <button class="btn btn-dark btn-flat p-2">
-                <i class="fa fa-facebook"></i>
-              </button>
-              <button class="btn btn-dark btn-flat p-2">
-                <i class="fa fa-twitter"></i>
-              </button>
-              <button class="btn btn-dark btn-flat p-2">
-                <i class="fa fa-instagram"></i>
-              </button>
+              <a href="https://www.linkedin.com/in/monsieursarwar/" target='_blank' class="btn btn-dark btn-flat p-2">
+                <i class="fa-brands fa-linkedin"></i>
+              </a>
+              <a href="https://github.com/thesarwars/" target="_blank" class="btn btn-dark btn-flat p-2">
+                <i class="fa-brands fa-github"></i>
+              </a>
+              <a href='https://resume-plum-ten.vercel.app/' target='_blank' class="btn btn-dark btn-flat p-2">
+                <i class="fa-solid fa-globe"></i>
+              </a>
             </div>
           </div>
         </footer>
