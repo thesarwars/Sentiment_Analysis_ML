@@ -3,17 +3,21 @@ from django.shortcuts import render
 from .machine import inference, load_model
 from django.views import View
 from django.http import HttpResponse,JsonResponse, HttpResponseNotFound
+import joblib
+import logging
 
     
         
 def predict_data(request):
     if request.method == 'POST':
-        vectoriser, model = load_model('models/vectoriser.pickle', 'models/Sentiment-LR.pickle')
+        vectoriser, model = joblib.load('models/vectoriser.pickle'), joblib.load('models/Sentiment-LR.pickle')
+        logging.info('Model Loaded Successfully')
         # vectoriser, model = load_model('models/vectoriser.pickle', 'models/Sentiment-LR.pickle')
         #  = load_model('/Users/sarwars/Desktop/Projects/sentiment_ana_django/models/Sentiment-LR.pickle')
         tweets = request.POST.get('comment')
         cols = ["tweet"]
         result_df = inference(vectoriser, model, tweets, cols)
+        print(result_df)
         return JsonResponse({'sentiment': result_df, 'text': tweets})
     return render(request, 'prediction/predict.html')
         
@@ -41,7 +45,7 @@ class PredictData(View):
                 return HttpResponseNotFound(JsonResponse(dict_msg))
                 # return HttpResponseNotFound(JsonResponse(dict_msg))
             else:
-                vectoriser, model = load_model('models/vectoriser.pickle', 'models/Sentiment-LR.pickle')
+                vectoriser, model = joblib.load('models/vectoriser.pickle'), joblib.load('models/Sentiment-LR.pickle')
                 # vectoriser, model = load_model('/Users/sarwars/Desktop/Projects/sentiment_ana_django/models/vectoriser.pickle', '/Users/sarwars/Desktop/Projects/sentiment_ana_django/models/Sentiment-LR.pickle')
                 cols = ["tweet"]
                 result_df = inference(vectoriser, model, tweets, cols)
