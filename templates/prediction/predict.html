@@ -145,6 +145,7 @@
             var textData = ''
             form.addEventListener('submit', function (e){
                 e.preventDefault();
+                console.log('Model Loaded Successfully')
                 var formData = new FormData(form);
         
                 fetch('{% url 'Predict_Data' %}',{
