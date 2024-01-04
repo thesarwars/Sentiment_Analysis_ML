@@ -1,6 +1,7 @@
 import joblib
 # import numpy as np
 # import pandas as pd
+import nltk
 nltk.data.path.append('/nltk_data')
 import pickle
 from nltk.stem import WordNetLemmatizer
