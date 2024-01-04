@@ -10,15 +10,22 @@ import logging
         
 def predict_data(request):
     if request.method == 'POST':
-        vectoriser, model = joblib.load('models/vectoriser.pickle'), joblib.load('models/Sentiment-LR.pickle')
-        logging.info('Model Loaded Successfully')
+        try:
+            vectoriser, model = joblib.load('models/vectoriser.pickle'), joblib.load('models/Sentiment-LR.pickle')
+            logging.info('Model Loaded Successfully')
+        except Exception as e:
+            print(f'Error on model load: {str(e)}')
         # vectoriser, model = load_model('models/vectoriser.pickle', 'models/Sentiment-LR.pickle')
         #  = load_model('/Users/sarwars/Desktop/Projects/sentiment_ana_django/models/Sentiment-LR.pickle')
         tweets = request.POST.get('comment')
-        cols = ["tweet"]
-        result_df = inference(vectoriser, model, tweets, cols)
-        print(result_df)
-        return JsonResponse({'sentiment': result_df, 'text': tweets})
+        if tweets:
+            cols = ["tweet"]
+            try:
+                result_df = inference(vectoriser, model, tweets, cols)
+                print(result_df)
+                return JsonResponse({'sentiment': result_df, 'text': tweets})
+            except Exception as e:
+                print(f'Error on predict {str(e)}')
     return render(request, 'prediction/predict.html')
         
         
