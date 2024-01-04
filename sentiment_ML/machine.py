@@ -18,17 +18,28 @@ import json
 
 
 # @st.cache_data
+# def load_model(vectoriser_path, model_path):
+    
+#     # Load the vectoriser.
+#     file = open(vectoriser_path, 'rb')
+#     vectoriser = pickle.load(file)
+#     file.close()
+    
+#     # Load the LR Model.
+#     file = open(model_path, 'rb')
+#     LRmodel = pickle.load(file)
+#     file.close()
+#     print('Model Loaded Successfully')
+#     return vectoriser, LRmodel
+
 def load_model(vectoriser_path, model_path):
     
-    # Load the vectoriser.
-    file = open(vectoriser_path, 'rb')
-    vectoriser = pickle.load(file)
-    file.close()
-    
-    # Load the LR Model.
-    file = open(model_path, 'rb')
-    LRmodel = pickle.load(file)
-    file.close()
+    # Load the vectoriser using joblib
+    vectoriser = joblib.load(vectoriser_path)
+
+    # Load the LR model using joblib
+    LRmodel = joblib.load(model_path)
+
     print('Model Loaded Successfully')
     return vectoriser, LRmodel
 
