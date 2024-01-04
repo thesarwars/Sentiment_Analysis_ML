@@ -22,5 +22,6 @@ from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.predict_data, name="Predict_Data")
+    path('', views.predict_data, name="Predict_Data"),
+    path('sentml/', views.PredictData.as_view(), name="Predict_Data_api"),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
