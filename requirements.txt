@@ -6,6 +6,7 @@ cycler
 Django
 django-cors-headers
 fonttools
+gunicorn
 joblib
 kiwisolver
 matplotlib
@@ -23,3 +24,4 @@ sqlparse
 threadpoolctl
 tqdm
 tzdata
+
